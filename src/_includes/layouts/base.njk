@@ -7,7 +7,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Honk&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link id="theme-stylesheet" rel="stylesheet" href="{{ '/css/themes/carnival.css' | url }}">
   <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
+  <script>
+    // Apply saved theme before paint to avoid flash
+    (function () {
+      var t = localStorage.getItem('theme');
+      if (t) {
+        var l = document.getElementById('theme-stylesheet');
+        l.href = l.href.replace(/\/[^/]+\.css$/, '/' + t + '.css');
+      }
+    })();
+  </script>
 </head>
 <body>
   <header>
@@ -19,5 +30,6 @@
   </main>
 
   {% include "partials/footer.njk" %}
+  <script src="{{ '/js/theme-switcher.js' | url }}"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({ "src/css": "css" });
+  eleventyConfig.addPassthroughCopy({ "src/js": "js" });
 
   // Make current year available in all templates
   eleventyConfig.addGlobalData("currentYear", () => new Date().getFullYear());

@@ -1,6 +1,3 @@
-/* theme */
-@import 'themes/carnival.css';
-
 /* global */
 @import 'global/reset.css';
 @import 'global/layout.css';
@@ -10,6 +7,7 @@
 @import 'components/nav.css';
 @import 'components/buttons.css';
 @import 'components/tags.css';
+@import 'components/theme-switcher.css';
 
 /* pages */
 @import 'pages/posts.css';

@@ -6,4 +6,20 @@
     <li><a href="{{ '/notes/' | url }}">Notes</a></li>
     <li><a href="{{ '/about/' | url }}">About</a></li>
   </ul>
+
+  <div class="theme-switcher" id="theme-switcher">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Switch theme" aria-expanded="false">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/>
+        <circle cx="8.5" cy="9.5" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="15.5" cy="9.5" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="8.5" cy="15.5" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="15.5" cy="15.5" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+      Theme
+    </button>
+    <div class="theme-flyout" id="theme-flyout" role="menu">
+      <button class="theme-option" data-theme="carnival" role="menuitem">Carnival</button>
+    </div>
+  </div>
 </nav>
