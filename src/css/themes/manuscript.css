@@ -1,0 +1,31 @@
+:root {
+  /* Fonts */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Inter', Georgia, sans-serif;
+
+  /* Backgrounds */
+  --bg:           #181816;
+  --bg-surface:   #1e1e1b;
+  --bg-tag:       #221f1c;
+
+  /* Text */
+  --text:         #9a9085;
+  --text-muted:   #524d48;
+
+  /* Accent colors — single warm-dark ramp, no hue shifts */
+  --yellow:       #e8e4d9;
+  --amber:        #c4bdb0;
+  --pink:         #a89880;
+
+  /* No gradient — flat linen tone used wherever gradient is referenced */
+  --gradient:     #e8e4d9;
+
+  /* Borders — nearly invisible */
+  --border:        rgba(255, 255, 255, 0.05);
+  --tag-border:    rgba(255, 255, 255, 0.06);
+  --filter-border: rgba(255, 255, 255, 0.06);
+
+  /* Button text rendered dark on the linen gradient background */
+  --stroke: #181816;
+  --radius: 3px;
+}
