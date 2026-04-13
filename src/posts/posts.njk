@@ -1,0 +1,55 @@
+---
+layout: layouts/base.njk
+title: Posts
+permalink: /posts/
+---
+<h1>All Posts</h1>
+
+{% set allTags = [] %}
+{% for post in collections.posts %}
+  {% for tag in post.data.tags %}
+    {% if tag != "posts" and tag not in allTags %}
+      {% set allTags = allTags.concat([tag]) %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+{% if allTags.length %}
+<div class="tag-filter">
+  <button class="tag-btn active" data-tag="all">All</button>
+  {% for tag in allTags %}
+  <button class="tag-btn" data-tag="{{ tag }}">{{ tag }}</button>
+  {% endfor %}
+</div>
+{% endif %}
+
+{% if collections.posts.length %}
+<ol class="post-list">
+  {% for post in collections.posts %}
+  <li data-tags="{{ post.data.tags | join(' ') }}">
+    <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+    <time datetime="{{ post.date | dateISO }}">{{ post.date | dateFormat }}</time>
+  </li>
+  {% endfor %}
+</ol>
+{% else %}
+<p>No posts yet.</p>
+{% endif %}
+
+<script>
+  const buttons = document.querySelectorAll('.tag-btn');
+  const items = document.querySelectorAll('.post-list li');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const selected = btn.dataset.tag;
+      items.forEach(item => {
+        const tags = item.dataset.tags.split(' ');
+        item.style.display = (selected === 'all' || tags.includes(selected)) ? '' : 'none';
+      });
+    });
+  });
+</script>

@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+title: Notes
+permalink: /notes/
+---
+<h1>Notes</h1>
+<p class="notes-intro">Short thoughts, observations, and things worth writing down.</p>
+
+{% if collections.notes.length %}
+<div class="notes-grid">
+  {% for note in collections.notes %}
+  <article class="note-card">
+    <div class="note-body">{{ note.templateContent | safe }}</div>
+    <footer class="note-footer">
+      <time datetime="{{ note.date | dateISO }}">{{ note.date | dateFormat }}</time>
+    </footer>
+  </article>
+  {% endfor %}
+</div>
+{% else %}
+<p>No notes yet.</p>
+{% endif %}

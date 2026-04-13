@@ -1,0 +1,24 @@
+---
+layout: layouts/base.njk
+title: Home
+---
+<section class="hero">
+  <h1>Welcome to the Blog</h1>
+  <p>Thoughts, notes, and longer writing.</p>
+</section>
+
+<section class="recent-posts">
+  <h2>Recent Posts</h2>
+  {% if collections.posts.length %}
+  <ol class="post-list">
+    {% for post in collections.posts | slice(0, 5) %}
+    <li>
+      <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+      <time datetime="{{ post.date | dateISO }}">{{ post.date | dateFormat }}</time>
+    </li>
+    {% endfor %}
+  </ol>
+  {% else %}
+  <p>No posts yet.</p>
+  {% endif %}
+</section>
