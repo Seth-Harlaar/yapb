@@ -1,0 +1,73 @@
+/* ── Display headings ── */
+
+h1 {
+  font-family: var(--font-display);
+  font-size: 2.75rem;
+  line-height: 1.05;
+  color: var(--yellow);
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  line-height: 1.15;
+  color: var(--amber);
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+
+/* ── Body text ── */
+
+p {
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+a {
+  color: var(--amber);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--pink);
+}
+
+/* ── Homepage hero ── */
+
+.hero {
+  margin-bottom: 3rem;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+/* ── Post body prose ── */
+
+.post-body h2,
+.post-body h3 {
+  margin: 1.75rem 0 0.5rem;
+}
+
+.post-body p {
+  margin-bottom: 1.1rem;
+}
+
+.post-body a {
+  color: var(--amber);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.post-body a:hover {
+  color: var(--pink);
+}

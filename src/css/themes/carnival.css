@@ -1,0 +1,31 @@
+:root {
+  /* Fonts */
+  --font-display: 'Honk', cursive;
+  --font-body:    'Inter', Georgia, sans-serif;
+
+  /* Backgrounds */
+  --bg:           #0c0c1e;
+  --bg-surface:   #13132a;
+  --bg-tag:       #1e0a3c;
+
+  /* Text */
+  --text:         #c8c8dc;
+  --text-muted:   #6b6b8a;
+
+  /* Accent colors */
+  --yellow:       #FFE44D;
+  --amber:        #FF8C00;
+  --pink:         #FF2D9E;
+
+  /* Gradient */
+  --gradient:     linear-gradient(90deg, #FFE44D 0%, #FF8C00 50%, #FF2D9E 100%);
+
+  /* Borders */
+  --border:        rgba(255, 255, 255, 0.07);
+  --tag-border:    rgba(255, 45, 158, 0.25);
+  --filter-border: rgba(255, 255, 255, 0.15);
+
+  /* Misc */
+  --stroke: #06061a;
+  --radius: 6px;
+}

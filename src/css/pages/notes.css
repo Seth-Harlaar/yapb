@@ -1,0 +1,63 @@
+/* ── Notes grid (CSS columns masonry) ── */
+
+.notes-intro {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.notes-grid {
+  column-count: 3;
+  column-gap: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .notes-grid { column-count: 1; }
+}
+
+@media (min-width: 641px) and (max-width: 900px) {
+  .notes-grid { column-count: 2; }
+}
+
+.note-card {
+  break-inside: avoid;
+  display: inline-block;
+  width: 100%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient top-border stripe */
+.note-card::before {
+  content: '';
+  display: block;
+  height: 3px;
+  background: var(--gradient);
+}
+
+.note-body {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--text);
+  padding: 1rem 1.1rem 0;
+}
+
+.note-body p {
+  margin: 0;
+}
+
+.note-footer {
+  padding: 0.65rem 1.1rem 0.85rem;
+  margin-top: 0.65rem;
+}
+
+.note-footer time {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
