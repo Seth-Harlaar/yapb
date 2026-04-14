@@ -3,6 +3,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/css": "css" });
   eleventyConfig.addPassthroughCopy({ "src/js": "js" });
   eleventyConfig.addPassthroughCopy("src/posts/**/*.{png,jpg,jpeg,gif,webp,svg}");
+  eleventyConfig.addPassthroughCopy("src/websites/**/*.{png,jpg,jpeg,gif,webp,svg}");
 
   // Make current year available in all templates
   eleventyConfig.addGlobalData("currentYear", () => new Date().getFullYear());
@@ -19,6 +20,11 @@ module.exports = function (eleventyConfig) {
     return collectionApi
       .getFilteredByGlob("src/notes/*.md")
       .sort((a, b) => b.date - a.date);
+  });
+
+  // Websites (no sort needed — order is defined by file)
+  eleventyConfig.addCollection("websites", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("src/websites/*.md");
   });
 
   // Format a Date → "April 10, 2026"

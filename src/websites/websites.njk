@@ -1,0 +1,29 @@
+---
+layout: layouts/base.njk
+title: Websites
+permalink: /websites/
+---
+<h1>Websites</h1>
+<p class="websites-intro">Other things I've built.</p>
+
+{% if collections.websites.length %}
+<div class="websites-grid">
+  {% for site in collections.websites %}
+  <a class="website-card" href="{{ site.data.url }}" target="_blank" rel="noopener noreferrer">
+    {% if site.data.preview %}
+    <img class="website-preview" src="{{ site.data.preview | url }}" alt="{{ site.data.title }}">
+    {% else %}
+    <div class="website-preview-placeholder">No preview</div>
+    {% endif %}
+    <div class="website-body">
+      <div class="website-title">{{ site.data.title }}</div>
+      {% if site.data.description %}
+      <div class="website-desc">{{ site.data.description }}</div>
+      {% endif %}
+    </div>
+  </a>
+  {% endfor %}
+</div>
+{% else %}
+<p>No websites yet.</p>
+{% endif %}

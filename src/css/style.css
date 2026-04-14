@@ -8,7 +8,9 @@
 @import 'components/buttons.css';
 @import 'components/tags.css';
 @import 'components/theme-switcher.css';
+@import 'components/cards.css';
 
 /* pages */
 @import 'pages/posts.css';
 @import 'pages/notes.css';
+@import 'pages/websites.css';

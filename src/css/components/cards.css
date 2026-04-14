@@ -1,0 +1,9 @@
+/* ── Shared card utility ── */
+
+/* Add .card-stripe to any card to get the gradient top bar */
+.card-stripe::before {
+  content: '';
+  display: block;
+  height: 3px;
+  background: var(--gradient);
+}

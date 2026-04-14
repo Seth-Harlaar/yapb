@@ -31,13 +31,6 @@
   overflow: hidden;
 }
 
-/* Gradient top-border stripe */
-.note-card::before {
-  content: '';
-  display: block;
-  height: 3px;
-  background: var(--gradient);
-}
 
 .note-body {
   font-size: 0.875rem;

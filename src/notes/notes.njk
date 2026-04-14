@@ -9,7 +9,7 @@ permalink: /notes/
 {% if collections.notes.length %}
 <div class="notes-grid">
   {% for note in collections.notes %}
-  <article class="note-card">
+  <article class="note-card card-stripe">
     <div class="note-body">{{ note.templateContent | safe }}</div>
     <footer class="note-footer">
       <time datetime="{{ note.date | dateISO }}">{{ note.date | dateFormat }}</time>
