@@ -1,16 +1,14 @@
 ---
 layout: layouts/post.njk
-title: Hello World
+title: Hello World!
 date: 2026-04-10
 tags:
   - posts
   - meta
 ---
 
-First post. The blog is up and running.
+Hello World!
 
-This is where the body of the post goes. Write in Markdown.
+## Image test
 
-## A subheading
-
-More content here.
+![alt text](../image.png)
