@@ -13,28 +13,42 @@
   align-items: baseline;
   gap: 1rem;
   padding: 0.85rem 0;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .post-list li:first-child {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--color-border);
 }
 
 .post-list a {
-  color: var(--text);
+  color: var(--color-text);
   text-decoration: none;
   transition: color 0.15s;
 }
 
 .post-list a:hover {
-  color: var(--amber);
+  color: var(--color-warning);
 }
 
 .post-list time {
   font-size: 0.75rem;
-  color: var(--text-muted);
+  color: var(--color-text-subtle);
   white-space: nowrap;
   letter-spacing: 0.04em;
+}
+
+/* ── Tag filter ── */
+
+.tag-filter {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.75rem;
+}
+
+/* Pill shape for tag filter buttons */
+.tag-filter sp-button::part(button) {
+  border-radius: 999px;
 }
 
 /* ── Recent posts (homepage) ── */
@@ -44,7 +58,25 @@
 }
 
 .recent-posts-cta {
+  display: inline-block;
   margin-top: 1.5rem;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.45rem 1.25rem;
+  border-radius: 999px;
+  background: var(--gradient);
+  color: var(--stroke);
+  text-decoration: none;
+  transition: opacity 0.15s, transform 0.1s;
+}
+
+.recent-posts-cta:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+  color: var(--stroke);
 }
 
 /* ── Post body images ── */
@@ -61,7 +93,7 @@
 .post-header {
   margin-bottom: 2.5rem;
   padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .post header {
@@ -76,7 +108,22 @@
   display: block;
   margin-top: 0.35rem;
   font-size: 0.75rem;
-  color: var(--text-muted);
+  color: var(--color-text-subtle);
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+
+/* ── Post tags (sp-tag list) ── */
+
+.tags {
+  list-style: none;
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  margin-top: 0.65rem;
+}
+
+.tags sp-tag {
+  --color-primary-subtle: var(--color-bg-overlay);
+  --color-primary:        var(--color-secondary);
 }

@@ -1,7 +1,7 @@
 /* ── Websites grid ── */
 
 .websites-intro {
-  color: var(--text-muted);
+  color: var(--color-text-subtle);
   margin-bottom: 2rem;
   font-size: 0.95rem;
 }
@@ -23,20 +23,19 @@
 .website-card {
   display: flex;
   flex-direction: column;
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  background: var(--color-bg-raised);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
   overflow: hidden;
   text-decoration: none;
-  color: var(--text);
+  color: var(--color-text);
   transition: border-color 0.15s, transform 0.15s;
 }
 
 .website-card:hover {
-  border-color: var(--filter-border);
+  border-color: var(--color-border-strong);
   transform: translateY(-2px);
 }
-
 
 .website-preview {
   width: 100%;
@@ -48,11 +47,11 @@
 .website-preview-placeholder {
   width: 100%;
   aspect-ratio: 3 / 2;
-  background: var(--bg-tag);
+  background: var(--color-bg-overlay);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-muted);
+  color: var(--color-text-subtle);
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -69,11 +68,11 @@
 .website-title {
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--text);
+  color: var(--color-text);
 }
 
 .website-desc {
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: var(--color-text-subtle);
   line-height: 1.5;
 }

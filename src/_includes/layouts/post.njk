@@ -9,7 +9,7 @@ layout: layouts/base.njk
     <ul class="tags">
       {% for tag in tags %}
         {% if tag != "posts" %}
-        <li>{{ tag }}</li>
+        <li><sp-tag color="primary">{{ tag }}</sp-tag></li>
         {% endif %}
       {% endfor %}
     </ul>

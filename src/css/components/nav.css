@@ -1,30 +1,16 @@
-nav {
-  max-width: 52rem;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0.9rem 1.25rem;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
+/* Slotted brand link */
 .nav-brand {
-  font-family: var(--font-display);
+  font-family: var(--font-family-display);
   font-size: 1.6rem;
   text-decoration: none;
-  color: var(--yellow);
+  color: var(--color-primary);
   line-height: 1;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.75rem;
-}
-
-nav a {
+/* Slotted nav links (default slot) */
+sp-nav a:not(.nav-brand) {
   text-decoration: none;
-  color: var(--amber);
+  color: var(--color-warning);
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.14em;
@@ -32,6 +18,6 @@ nav a {
   transition: color 0.15s;
 }
 
-nav a:hover {
-  color: var(--pink);
+sp-nav a:not(.nav-brand):hover {
+  color: var(--color-secondary);
 }

@@ -1,7 +1,7 @@
 /* ── Notes grid (CSS columns masonry) ── */
 
 .notes-intro {
-  color: var(--text-muted);
+  color: var(--color-text-subtle);
   margin-bottom: 2rem;
   font-size: 0.95rem;
 }
@@ -19,23 +19,24 @@
   .notes-grid { column-count: 2; }
 }
 
-.note-card {
+/* Each sp-card fills a column cell */
+.notes-grid sp-card {
   break-inside: avoid;
   display: inline-block;
   width: 100%;
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
   margin-bottom: 1.25rem;
-  position: relative;
-  overflow: hidden;
+  --sp-card-accent: var(--gradient);
 }
 
+/* Remove sp-card's default padding so note-body/footer control their own */
+.notes-grid sp-card::part(card) {
+  padding: 0;
+}
 
 .note-body {
   font-size: 0.875rem;
   line-height: 1.65;
-  color: var(--text);
+  color: var(--color-text);
   padding: 1rem 1.1rem 0;
 }
 
@@ -50,7 +51,7 @@
 
 .note-footer time {
   font-size: 0.7rem;
-  color: var(--text-muted);
+  color: var(--color-text-subtle);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }

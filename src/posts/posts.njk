@@ -16,9 +16,9 @@ permalink: /posts/
 
 {% if allTags.length %}
 <div class="tag-filter">
-  <button class="tag-btn active" data-tag="all">All</button>
+  <sp-button data-tag="all" variant="primary">All</sp-button>
   {% for tag in allTags %}
-  <button class="tag-btn" data-tag="{{ tag }}">{{ tag }}</button>
+  <sp-button data-tag="{{ tag }}">{{ tag }}</sp-button>
   {% endfor %}
 </div>
 {% endif %}
@@ -37,17 +37,17 @@ permalink: /posts/
 {% endif %}
 
 <script>
-  const buttons = document.querySelectorAll('.tag-btn');
-  const items = document.querySelectorAll('.post-list li');
+  const buttons = document.querySelectorAll('sp-button[data-tag]');
+  const items   = document.querySelectorAll('.post-list li');
 
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      buttons.forEach(b => b.removeAttribute('variant'));
+      btn.setAttribute('variant', 'primary');
 
       const selected = btn.dataset.tag;
       items.forEach(item => {
-        const tags = item.dataset.tags.split(' ');
+        const tags = item.dataset.tags ? item.dataset.tags.split(' ') : [];
         item.style.display = (selected === 'all' || tags.includes(selected)) ? '' : 'none';
       });
     });

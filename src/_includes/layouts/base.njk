@@ -7,20 +7,27 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Honk&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <link id="theme-stylesheet" rel="stylesheet" href="{{ '/css/themes/carnival.css' | url }}">
   <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
   <script>
-    // Apply saved theme before paint to avoid flash
+    // Apply saved theme before first paint to prevent flash.
+    // Pre-creates the same link elements sp-theme.js will reuse.
     (function () {
-      var t = localStorage.getItem('theme');
-      if (t) {
-        var l = document.getElementById('theme-stylesheet');
-        l.href = l.href.replace(/\/[^/]+\.css$/, '/' + t + '.css');
+      var saved = localStorage.getItem('sp-theme') || 'carnival';
+      var base  = '{{ "/themes/" | url }}';
+      document.documentElement.setAttribute('data-theme', saved);
+      function mkLink(id, href) {
+        var el = document.createElement('link');
+        el.rel = 'stylesheet'; el.id = id; el.href = href;
+        document.head.appendChild(el);
       }
+      mkLink('sp-theme-tokens', base + 'default.css');
+      mkLink('sp-theme-active', base + saved + '.css');
     })();
   </script>
 </head>
 <body>
+  <sp-theme name="carnival"></sp-theme>
+
   <header>
     {% include "partials/nav.njk" %}
   </header>
@@ -30,6 +37,11 @@
   </main>
 
   {% include "partials/footer.njk" %}
-  <script src="{{ '/js/theme-switcher.js' | url }}"></script>
+
+  <script type="module" src="{{ '/js/sp-theme.js' | url }}"></script>
+  <script type="module" src="{{ '/js/sp-nav.js' | url }}"></script>
+  <script type="module" src="{{ '/js/sp-button.js' | url }}"></script>
+  <script type="module" src="{{ '/js/sp-card.js' | url }}"></script>
+  <script type="module" src="{{ '/js/sp-tag.js' | url }}"></script>
 </body>
 </html>
