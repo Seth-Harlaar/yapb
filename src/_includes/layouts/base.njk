@@ -9,11 +9,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Honk&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
   <script>
-    // Apply saved theme before first paint to prevent flash.
-    // Pre-creates the same link elements sp-theme.js will reuse.
+    // Seed localStorage on first visit so the blog starts in carnival.
+    // Pre-creates the link elements sp-theme.js will reuse, preventing flash.
     (function () {
-      var saved = localStorage.getItem('sp-theme') || 'carnival';
-      var base  = '{{ "/themes/" | url }}';
+      var saved = localStorage.getItem('sp-theme');
+      if (!saved) { saved = 'default'; localStorage.setItem('sp-theme', saved); }
+      var base = 'https://cdn.jsdelivr.net/gh/Seth-Harlaar/sp-components@latest/themes/';
       document.documentElement.setAttribute('data-theme', saved);
       function mkLink(id, href) {
         var el = document.createElement('link');
@@ -26,7 +27,7 @@
   </script>
 </head>
 <body>
-  <sp-theme name="carnival"></sp-theme>
+  <sp-theme></sp-theme>
 
   <header>
     {% include "partials/nav.njk" %}
@@ -38,10 +39,9 @@
 
   {% include "partials/footer.njk" %}
 
-  <script type="module" src="{{ '/js/sp-theme.js' | url }}"></script>
-  <script type="module" src="{{ '/js/sp-nav.js' | url }}"></script>
-  <script type="module" src="{{ '/js/sp-button.js' | url }}"></script>
-  <script type="module" src="{{ '/js/sp-card.js' | url }}"></script>
-  <script type="module" src="{{ '/js/sp-tag.js' | url }}"></script>
+  <script type="module">
+    import 'https://cdn.jsdelivr.net/gh/Seth-Harlaar/sp-components@latest/components/sp-theme.js'
+    import 'https://cdn.jsdelivr.net/gh/Seth-Harlaar/sp-components@latest/components/sp-nav.js'
+  </script>
 </body>
 </html>

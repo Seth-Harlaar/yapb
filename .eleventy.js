@@ -2,7 +2,6 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({ "src/css": "css" });
   eleventyConfig.addPassthroughCopy({ "src/js": "js" });
-  eleventyConfig.addPassthroughCopy({ "src/themes": "themes" });
   eleventyConfig.addPassthroughCopy("src/posts/**/*.{png,jpg,jpeg,gif,webp,svg}");
   eleventyConfig.addPassthroughCopy("src/websites/**/*.{png,jpg,jpeg,gif,webp,svg}");
 
